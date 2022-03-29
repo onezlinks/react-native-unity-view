@@ -2,7 +2,7 @@
 	"compilerOptions": {
 	  "baseUrl": "./",
 	  "paths": {
-		"react-native-unity-play-ts": ["./src/index"]
+		"react-native-unity-view": ["./src/index"]
 	  },
 	  "allowUnreachableCode": false,
 	  "allowUnusedLabels": false,
