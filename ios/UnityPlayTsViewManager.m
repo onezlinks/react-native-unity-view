@@ -11,6 +11,10 @@
 RCT_EXPORT_MODULE(UnityPlayTsView)
 RCT_EXPORT_VIEW_PROPERTY(onUnityMessage, RCTBubblingEventBlock)
 
+- (NSArray<NSString *> *)supportedEvents {
+    return @[@"onUnityMessage"];
+}
+
 - (UIView *)view
 {
     UnityPlayTsView *unity = [UnityPlayTsView new];

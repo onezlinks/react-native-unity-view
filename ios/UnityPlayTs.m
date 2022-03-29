@@ -18,6 +18,10 @@ static id<RNUnityFramework> Unity_ufw;
     }
 }
 
+- (NSArray<NSString *> *)supportedEvents {
+    return @[@"onUnityMessage"];
+}
+
 + (id<RNUnityFramework>) launchWithOptions:(NSDictionary*)applaunchOptions {
 
     NSString* bundlePath = nil;
