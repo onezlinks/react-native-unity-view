@@ -1,147 +1,38 @@
 {
   "name": "react-native-unity-view",
-  "version": "0.1.12",
-  "description": "react-native-unity-view",
-  "main": "lib/commonjs/index",
-  "module": "lib/module/index",
-  "types": "lib/typescript/index.d.ts",
-  "react-native": "src/index",
-  "source": "src/index",
-  "files": [
-    "src",
-    "lib",
-    "android",
-    "ios",
-    "cpp",
-    "react-native-unity-play-ts.podspec",
-    "!lib/typescript/example",
-    "!android/build",
-    "!ios/build",
-    "!**/__tests__",
-    "!**/__fixtures__",
-    "!**/__mocks__"
-  ],
+  "title": "React Native Unity View",
+  "version": "0.0.7",
+  "description": "Embed Unity Player inside a React Native app",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "jest",
-    "typescript": "tsc --noEmit",
-    "lint": "eslint \"src/**/*.{js,ts,tsx}\"",
-    "prepare": "bob build",
-    "release": "release-it",
-    "example": "yarn --cwd example",
-    "pods": "cd example && pod-install --quiet",
-    "bootstrap": "yarn example && yarn && yarn pods"
+    "build": "rimraf dist/ && tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asmadsen/react-native-unity-view.git",
+    "baseUrl": "https://github.com/asmadsen/react-native-unity-view"
   },
   "keywords": [
-    "react-native",
-    "ios",
-    "android"
+    "react-native"
   ],
-  "repository": "https://github.com/azesmway/react-native-unity-play-ts",
-  "author": "azesmway <azesm@me.com> (https://github.com/azesmway)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/azesmway/react-native-unity-play-ts/issues"
+  "author": {
+    "name": "Andreas Storesund Madsen",
+    "email": "andreas@asmadsen.no"
   },
-  "homepage": "https://github.com/azesmway/react-native-unity-play-ts#readme",
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+  "license": "MIT",
+  "licenseFilename": "LICENSE",
+  "readmeFilename": "README.md",
+  "peerDependencies": {
+    "react": "^16.8.1",
+    "react-native": ">=0.60.0"
   },
   "devDependencies": {
-    "@commitlint/config-conventional": "^11.0.0",
-    "@react-native-community/eslint-config": "^2.0.0",
-    "@release-it/conventional-changelog": "^2.0.0",
-    "@types/jest": "^27.4.1",
-    "@types/react": "^17.0.40",
-    "@types/react-native": "^0.67.3",
-    "commitlint": "^11.0.0",
-    "eslint": "^7.2.0",
-    "eslint-config-prettier": "^7.0.0",
-    "eslint-plugin-prettier": "^3.1.3",
-    "husky": "^6.0.0",
-    "jest": "^27.5.1",
-    "pod-install": "^0.1.0",
-    "prettier": "^2.0.5",
-    "react": "^17.0.2",
-    "react-native": "^0.67.3",
-    "react-native-builder-bob": "^0.18.0",
-    "release-it": "^14.2.2",
-    "typescript": "^4.1.3"
-  },
-  "peerDependencies": {
-    "react": "*",
-    "react-native": "*"
-  },
-  "jest": {
-    "preset": "react-native",
-    "modulePathIgnorePatterns": [
-      "<rootDir>/example/node_modules",
-      "<rootDir>/lib/"
-    ]
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "release-it": {
-    "git": {
-      "commitMessage": "chore: release ${version}",
-      "tagName": "v${version}"
-    },
-    "npm": {
-      "publish": true
-    },
-    "github": {
-      "release": true
-    },
-    "plugins": {
-      "@release-it/conventional-changelog": {
-        "preset": "angular"
-      }
-    }
-  },
-  "eslintConfig": {
-    "root": true,
-    "extends": [
-      "@react-native-community",
-      "prettier"
-    ],
-    "rules": {
-      "prettier/prettier": [
-        "error",
-        {
-          "quoteProps": "consistent",
-          "singleQuote": true,
-          "tabWidth": 2,
-          "trailingComma": "es5",
-          "useTabs": false
-        }
-      ]
-    }
-  },
-  "eslintIgnore": [
-    "node_modules/",
-    "lib/"
-  ],
-  "prettier": {
-    "quoteProps": "consistent",
-    "singleQuote": true,
-    "tabWidth": 2,
-    "trailingComma": "es5",
-    "useTabs": false
-  },
-  "react-native-builder-bob": {
-    "source": "src",
-    "output": "lib",
-    "targets": [
-      "commonjs",
-      "module",
-      [
-        "typescript",
-        {
-          "project": "tsconfig.build.json"
-        }
-      ]
-    ]
+    "@types/prop-types": "^15.7.3",
+    "@types/react": "^16.9.9",
+    "react": "^16.8.3",
+    "react-native": "^0.60.0",
+    "rimraf": "^3.0.0",
+    "typescript": "^3.6.4"
   }
 }

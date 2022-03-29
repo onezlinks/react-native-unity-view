@@ -1,28 +1,17 @@
 {
 	"compilerOptions": {
-	  "baseUrl": "./",
-	  "paths": {
-		"react-native-unity-view": ["./src/index"]
-	  },
-	  "allowUnreachableCode": false,
-	  "allowUnusedLabels": false,
-	  "esModuleInterop": true,
-	  "importsNotUsedAsValues": "error",
-	  "forceConsistentCasingInFileNames": true,
-	  "jsx": "react",
-	  "lib": ["esnext"],
-	  "module": "esnext",
+	  "sourceRoot": "./src",
+	  "outDir": "./dist",
 	  "moduleResolution": "node",
-	  "noFallthroughCasesInSwitch": true,
-	  "noImplicitReturns": true,
-	  "noImplicitUseStrict": false,
-	  "noStrictGenericChecks": false,
-	  "noUnusedLocals": true,
-	  "noUnusedParameters": true,
-	  "resolveJsonModule": true,
-	  "skipLibCheck": true,
-	  "strict": true,
-	  "target": "esnext"
-	}
+	  "lib": [
+		"dom",
+		"es2017"
+	  ],
+	  "jsx": "react",
+	  "declaration": true,
+	  "sourceMap": true
+	},
+	"exclude": [
+	  "node_modules"
+	]
   }
-  
