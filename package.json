@@ -3,8 +3,8 @@
   "title": "React Native Unity View",
   "version": "0.0.7",
   "description": "Embed Unity Player inside a React Native app",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "build": "rimraf dist/ && tsc"
   },
