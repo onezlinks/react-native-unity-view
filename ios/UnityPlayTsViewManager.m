@@ -48,4 +48,15 @@ RCT_EXPORT_METHOD(postMessage:(nonnull NSNumber*) reactTag gameObject:(NSString*
     }];
 }
 
+RCT_EXPORT_METHOD(unloadUnity:(nonnull NSNumber*) reactTag) {
+    [self.bridge.uiManager addUIBlock:^(RCTUIManager *uiManager, NSDictionary<NSNumber *,UIView *> *viewRegistry) {
+        UnityPlayTsView *view = (UnityPlayTsView*) viewRegistry[reactTag];
+        if (!view || ![view isKindOfClass:[UnityPlayTsView class]]) {
+            RCTLogError(@"Cannot find NativeView with tag #%@", reactTag);
+            return;
+        }
+        [UnityPlayTsView unloadUnity];
+    }];
+}
+
 @end

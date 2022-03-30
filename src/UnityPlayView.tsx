@@ -26,11 +26,19 @@ export default class UnityPlayView extends React.Component<UnityPlayTsProps> {
     super(props);
   }
 
+  public unloadUnity() {
+    UIManager.dispatchViewManagerCommand(
+      findNodeHandle(this),
+      this.getCommand('unloadUnity'),
+      [],
+    );
+  }
+
   public postMessage(gameObject: string, methodName: string, message: string) {
     UIManager.dispatchViewManagerCommand(
       findNodeHandle(this),
       this.getCommand('postMessage'),
-      [gameObject, methodName, message]
+      [gameObject, methodName, message],
     );
   }
 
@@ -46,6 +54,10 @@ export default class UnityPlayView extends React.Component<UnityPlayTsProps> {
     return {
       ...this.props,
     };
+  }
+
+  public componentWillUnmount() {
+    this.unloadUnity();
   }
 
   public render() {

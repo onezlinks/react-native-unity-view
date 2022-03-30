@@ -29,7 +29,9 @@ NSDictionary* appLaunchOpts;
     UIWindow * main = [[[UIApplication sharedApplication] delegate] window];
     if(main != nil) {
         [main makeKeyAndVisible];
-        [[UnityPlayTs ufw] unloadApplication];
+        if ([UnityPlayTs ufw]) {
+            [[UnityPlayTs ufw] unloadApplication];
+        }
     }
 }
 
@@ -46,6 +48,17 @@ NSDictionary* appLaunchOpts;
         };
 
         self.onUnityMessage(data);
+    }
+}
+
++ (void)unloadUnity
+{
+    UIWindow * main = [[[UIApplication sharedApplication] delegate] window];
+    if(main != nil) {
+        [main makeKeyAndVisible];
+        if ([UnityPlayTs ufw]) {
+            [[UnityPlayTs ufw] unloadApplication];
+        }
     }
 }
 
