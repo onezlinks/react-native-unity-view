@@ -1,23 +1,20 @@
 #import <Foundation/Foundation.h>
 #import <React/RCTViewManager.h>
 #import <React/RCTUIManager.h>
-#import <UnityPlayTsView.h>
+#import <ReactNativeUnityView.h>
+#import <UnityFramework/NativeCallProxy.h>
 
-@interface UnityPlayTsViewManager : RCTViewManager
+@interface ReactNativeUnityViewManager : RCTViewManager
 @end
 
-@implementation UnityPlayTsViewManager
+@implementation ReactNativeUnityViewManager
 
-RCT_EXPORT_MODULE(UnityPlayTsView)
+RCT_EXPORT_MODULE(ReactNativeUnityView)
 RCT_EXPORT_VIEW_PROPERTY(onUnityMessage, RCTBubblingEventBlock)
-
-- (NSArray<NSString *> *)supportedEvents {
-    return @[@"onUnityMessage"];
-}
 
 - (UIView *)view
 {
-    UnityPlayTsView *unity = [UnityPlayTsView new];
+    ReactNativeUnityView *unity = [ReactNativeUnityView new];
     UIWindow * main = [[[UIApplication sharedApplication] delegate] window];
 
     if(main != nil) {
@@ -39,24 +36,28 @@ RCT_EXPORT_VIEW_PROPERTY(onUnityMessage, RCTBubblingEventBlock)
 
 RCT_EXPORT_METHOD(postMessage:(nonnull NSNumber*) reactTag gameObject:(NSString*_Nonnull) gameObject methodName:(NSString*_Nonnull) methodName message:(NSString*_Nonnull) message) {
     [self.bridge.uiManager addUIBlock:^(RCTUIManager *uiManager, NSDictionary<NSNumber *,UIView *> *viewRegistry) {
-        UnityPlayTsView *view = (UnityPlayTsView*) viewRegistry[reactTag];
-        if (!view || ![view isKindOfClass:[UnityPlayTsView class]]) {
+        ReactNativeUnityView *view = (ReactNativeUnityView*) viewRegistry[reactTag];
+        if (!view || ![view isKindOfClass:[ReactNativeUnityView class]]) {
             RCTLogError(@"Cannot find NativeView with tag #%@", reactTag);
             return;
         }
-        [UnityPlayTsView UnityPostMessage:(NSString *)gameObject methodName:(NSString *)methodName message:(NSString *)message];
+        [ReactNativeUnityView UnityPostMessage:(NSString *)gameObject methodName:(NSString *)methodName message:(NSString *)message];
     }];
 }
 
 RCT_EXPORT_METHOD(unloadUnity:(nonnull NSNumber*) reactTag) {
     [self.bridge.uiManager addUIBlock:^(RCTUIManager *uiManager, NSDictionary<NSNumber *,UIView *> *viewRegistry) {
-        UnityPlayTsView *view = (UnityPlayTsView*) viewRegistry[reactTag];
-        if (!view || ![view isKindOfClass:[UnityPlayTsView class]]) {
+        ReactNativeUnityView *view = (ReactNativeUnityView*) viewRegistry[reactTag];
+        if (!view || ![view isKindOfClass:[ReactNativeUnityView class]]) {
             RCTLogError(@"Cannot find NativeView with tag #%@", reactTag);
             return;
         }
-        [UnityPlayTsView unloadUnity];
+        [ReactNativeUnityView unloadUnity];
     }];
+}
+
+- (NSArray<NSString *> *)supportedEvents {
+    return @[@"onUnityMessage"];
 }
 
 @end

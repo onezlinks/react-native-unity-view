@@ -31,7 +31,7 @@
 
 @end
 
-@interface UnityPlayTs : RCTEventEmitter <RCTBridgeModule>
+@interface ReactNativeUnity : RCTEventEmitter <RCTBridgeModule>
 
 @property (atomic, class) id<RNUnityFramework> ufw;
 

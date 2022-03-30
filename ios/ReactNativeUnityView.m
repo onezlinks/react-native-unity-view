@@ -1,15 +1,15 @@
-#import "UnityPlayTsView.h"
-#import "UnityPlayTs.h"
+#import "ReactNativeUnityView.h"
+#import "ReactNativeUnity.h"
 
 NSDictionary* appLaunchOpts;
 
-@implementation UnityPlayTsView
+@implementation ReactNativeUnityView
 
 -(id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        _uView = [[[UnityPlayTs launchWithOptions:appLaunchOpts] appController] rootView];
+        _uView = [[[ReactNativeUnity launchWithOptions:appLaunchOpts] appController] rootView];
         [FrameworkLibAPI registerAPIforNativeCalls:self];
     }
     return self;
@@ -29,15 +29,26 @@ NSDictionary* appLaunchOpts;
     UIWindow * main = [[[UIApplication sharedApplication] delegate] window];
     if(main != nil) {
         [main makeKeyAndVisible];
-        if ([UnityPlayTs ufw]) {
-            [[UnityPlayTs ufw] unloadApplication];
+        if ([ReactNativeUnity ufw]) {
+            [[ReactNativeUnity ufw] unloadApplication];
+        }
+    }
+}
+
++ (void)unloadUnity
+{
+    UIWindow * main = [[[UIApplication sharedApplication] delegate] window];
+    if(main != nil) {
+        [main makeKeyAndVisible];
+        if ([ReactNativeUnity ufw]) {
+            [[ReactNativeUnity ufw] unloadApplication];
         }
     }
 }
 
 + (void)UnityPostMessage:(NSString*)gameObject methodName:(NSString*)methodName message:(NSString*) message {
     dispatch_async(dispatch_get_main_queue(), ^{
-        [[UnityPlayTs ufw] sendMessageToGOWithName:[gameObject UTF8String] functionName:[methodName UTF8String] message:[message UTF8String]];
+        [[ReactNativeUnity ufw] sendMessageToGOWithName:[gameObject UTF8String] functionName:[methodName UTF8String] message:[message UTF8String]];
     });
 }
 
@@ -48,17 +59,6 @@ NSDictionary* appLaunchOpts;
         };
 
         self.onUnityMessage(data);
-    }
-}
-
-+ (void)unloadUnity
-{
-    UIWindow * main = [[[UIApplication sharedApplication] delegate] window];
-    if(main != nil) {
-        [main makeKeyAndVisible];
-        if ([UnityPlayTs ufw]) {
-            [[UnityPlayTs ufw] unloadApplication];
-        }
     }
 }
 

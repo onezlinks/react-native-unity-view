@@ -4,7 +4,7 @@
 #import <React/RCTBridgeModule.h>
 #import <UnityFramework/NativeCallProxy.h>
 
-@interface UnityPlayTsView : RCTView <RCTBridgeModule, NativeCallsProtocol>
+@interface ReactNativeUnityView : RCTView <RCTBridgeModule, NativeCallsProtocol>
 
 @property (nonatomic, strong) UIView* _Nullable uView;
 

@@ -1,8 +1,8 @@
-#import "UnityPlayTs.h"
+#import "ReactNativeUnity.h"
 
 int gArgc = 1;
 
-@implementation UnityPlayTs
+@implementation ReactNativeUnity
 
 static id<RNUnityFramework> Unity_ufw;
 
@@ -16,10 +16,6 @@ static id<RNUnityFramework> Unity_ufw;
     @synchronized (self) {
         Unity_ufw = ufw;
     }
-}
-
-- (NSArray<NSString *> *)supportedEvents {
-    return @[@"onUnityMessage"];
 }
 
 + (id<RNUnityFramework>) launchWithOptions:(NSDictionary*)applaunchOptions {
@@ -56,6 +52,10 @@ static id<RNUnityFramework> Unity_ufw;
 
 - (dispatch_queue_t)methodQueue {
     return dispatch_get_main_queue();
+}
+
+- (NSArray<NSString *> *)supportedEvents {
+    return @[@"onUnityMessage"];
 }
 
 @end

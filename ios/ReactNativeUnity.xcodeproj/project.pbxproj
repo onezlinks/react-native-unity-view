@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 
-		5E555C0D2413F4C50049A1A2 /* UnityPlayTs.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* UnityPlayTs.m */; };
+		5E555C0D2413F4C50049A1A2 /* ReactNativeUnity.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* ReactNativeUnity.m */; };
 
 /* End PBXBuildFile section */
 
@@ -25,10 +25,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		134814201AA4EA6300B7C361 /* libUnityPlayTs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUnityPlayTs.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		134814201AA4EA6300B7C361 /* libReactNativeUnity.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libReactNativeUnity.a; sourceTree = BUILT_PRODUCTS_DIR; };
 
-		B3E7B5881CC2AC0600A0062D /* UnityPlayTs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnityPlayTs.h; sourceTree = "<group>"; };
-		B3E7B5891CC2AC0600A0062D /* UnityPlayTs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnityPlayTs.m; sourceTree = "<group>"; };
+		B3E7B5881CC2AC0600A0062D /* ReactNativeUnity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReactNativeUnity.h; sourceTree = "<group>"; };
+		B3E7B5891CC2AC0600A0062D /* ReactNativeUnity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReactNativeUnity.m; sourceTree = "<group>"; };
 
 /* End PBXFileReference section */
 
@@ -46,7 +46,7 @@
 		134814211AA4EA7D00B7C361 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				134814201AA4EA6300B7C361 /* libUnityPlayTs.a */,
+				134814201AA4EA6300B7C361 /* libReactNativeUnity.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -55,8 +55,8 @@
 			isa = PBXGroup;
 			children = (
 
-				B3E7B5881CC2AC0600A0062D /* UnityPlayTs.h */,
-				B3E7B5891CC2AC0600A0062D /* UnityPlayTs.m */,
+				B3E7B5881CC2AC0600A0062D /* ReactNativeUnity.h */,
+				B3E7B5891CC2AC0600A0062D /* ReactNativeUnity.m */,
 
 				134814211AA4EA7D00B7C361 /* Products */,
 			);
@@ -65,9 +65,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		58B511DA1A9E6C8500147676 /* UnityPlayTs */ = {
+		58B511DA1A9E6C8500147676 /* ReactNativeUnity */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "UnityPlayTs" */;
+			buildConfigurationList = 58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "ReactNativeUnity" */;
 			buildPhases = (
 				58B511D71A9E6C8500147676 /* Sources */,
 				58B511D81A9E6C8500147676 /* Frameworks */,
@@ -77,9 +77,9 @@
 			);
 			dependencies = (
 			);
-			name = UnityPlayTs;
+			name = ReactNativeUnity;
 			productName = RCTDataManager;
-			productReference = 134814201AA4EA6300B7C361 /* libUnityPlayTs.a */;
+			productReference = 134814201AA4EA6300B7C361 /* libReactNativeUnity.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -96,7 +96,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 58B511D61A9E6C8500147676 /* Build configuration list for PBXProject "UnityPlayTs" */;
+			buildConfigurationList = 58B511D61A9E6C8500147676 /* Build configuration list for PBXProject "ReactNativeUnity" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -109,7 +109,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				58B511DA1A9E6C8500147676 /* UnityPlayTs */,
+				58B511DA1A9E6C8500147676 /* ReactNativeUnity */,
 			);
 		};
 /* End PBXProject section */
@@ -120,7 +120,7 @@
 			buildActionMask = 2147483647;
 			files = (
 
-				B3E7B58A1CC2AC0600A0062D /* UnityPlayTs.m in Sources */,
+				B3E7B58A1CC2AC0600A0062D /* ReactNativeUnity.m in Sources */,
 
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -232,7 +232,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = UnityPlayTs;
+				PRODUCT_NAME = ReactNativeUnity;
 				SKIP_INSTALL = YES;
 
 			};
@@ -249,7 +249,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = UnityPlayTs;
+				PRODUCT_NAME = ReactNativeUnity;
 				SKIP_INSTALL = YES;
 
 			};
@@ -258,7 +258,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		58B511D61A9E6C8500147676 /* Build configuration list for PBXProject "UnityPlayTs" */ = {
+		58B511D61A9E6C8500147676 /* Build configuration list for PBXProject "ReactNativeUnity" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				58B511ED1A9E6C8500147676 /* Debug */,
@@ -267,7 +267,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "UnityPlayTs" */ = {
+		58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "ReactNativeUnity" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				58B511F01A9E6C8500147676 /* Debug */,
