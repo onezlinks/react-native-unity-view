@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 import {
   requireNativeComponent,
   UIManager,
   findNodeHandle,
   Platform,
   NativeSyntheticEvent,
-} from "react-native";
+} from 'react-native';
 
 interface UnityMessage {
   message: string;
@@ -15,7 +15,7 @@ type ReactNativeUnityViewProps = {
   onUnityMessage?: (event: NativeSyntheticEvent<UnityMessage>) => void;
 };
 
-const ComponentName = "ReactNativeUnityView";
+const ComponentName = 'ReactNativeUnityView';
 
 const ReactNativeUnityView =
   requireNativeComponent<ReactNativeUnityViewProps>(ComponentName);
@@ -30,7 +30,7 @@ export default class UnityView extends React.Component<ReactNativeUnityViewProps
   public postMessage(gameObject: string, methodName: string, message: string) {
     UIManager.dispatchViewManagerCommand(
       findNodeHandle(this),
-      this.getCommand("postMessage"),
+      this.getCommand('postMessage'),
       [gameObject, methodName, message]
     );
   }
@@ -38,14 +38,22 @@ export default class UnityView extends React.Component<ReactNativeUnityViewProps
   public unloadUnity() {
     UIManager.dispatchViewManagerCommand(
       findNodeHandle(this),
-      this.getCommand("unloadUnity"),
+      this.getCommand('unloadUnity'),
       []
     );
   }
 
+  public pauseUnity(pause: boolean) {
+    UIManager.dispatchViewManagerCommand(
+      findNodeHandle(this),
+      this.getCommand('pauseUnity'),
+      [pause]
+    );
+  }
+
   private getCommand(cmd: string): any {
-    if (Platform.OS === "ios") {
-      return UIManager.getViewManagerConfig("ReactNativeUnityView").Commands[
+    if (Platform.OS === 'ios') {
+      return UIManager.getViewManagerConfig('ReactNativeUnityView').Commands[
         cmd
       ];
     } else {
