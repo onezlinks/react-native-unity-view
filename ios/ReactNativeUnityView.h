@@ -12,5 +12,6 @@
 + (void)UnityPostMessage:(NSString* _Nonnull )gameObject methodName:(NSString* _Nonnull)methodName message:(NSString* _Nonnull) message;
 + (void)unloadUnity;
 + (void)pauseUnity:(BOOL * _Nonnull)pause;
++ (void)resumeUnity;
 
 @end

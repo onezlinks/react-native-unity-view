@@ -51,6 +51,14 @@ export default class UnityView extends React.Component<ReactNativeUnityViewProps
     );
   }
 
+  public resumeUnity() {
+    UIManager.dispatchViewManagerCommand(
+      findNodeHandle(this),
+      this.getCommand('resumeUnity'),
+      []
+    );
+  }
+
   private getCommand(cmd: string): any {
     if (Platform.OS === 'ios') {
       return UIManager.getViewManagerConfig('ReactNativeUnityView').Commands[
